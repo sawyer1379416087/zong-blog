@@ -126,6 +126,10 @@
 
 /* ==================== Doc Headings ==================== */
 
+.vp-doc h1:first-child {
+  display: none;
+}
+
 .vp-doc h1 {
   background: linear-gradient(135deg, #646cff 0%, #c084fc 100%);
   -webkit-background-clip: text;
@@ -351,57 +355,7 @@
   opacity: 0.7;
 }
 
-/* ==================== Article Meta (Tag / Date / Category) ==================== */
-
-.article-meta-wrapper {
-  padding: 16px 20px;
-  background: var(--vp-c-bg-soft);
-  border-radius: 12px;
-  margin-bottom: 28px;
-  border: 1px solid var(--vp-c-divider);
-}
-
-.article-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 8px 0 0;
-}
-
-.article-tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 14px;
-  border-radius: 100px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  background: var(--vp-c-brand-soft);
-  color: var(--vp-c-brand-1);
-  transition: all 0.25s ease;
-  cursor: default;
-}
-
-.article-tag:hover {
-  background: var(--vp-c-brand-1);
-  color: #fff;
-  transform: scale(1.05);
-}
-
-.article-meta {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  font-size: 0.88rem;
-  color: var(--vp-c-text-2);
-}
-
-.article-meta .date::before {
-  content: '📅 ';
-}
-
-.article-meta .category::before {
-  content: '📂 ';
-}
+/* ==================== Article Meta ==================== */
 
 /* ==================== Article Card List ==================== */
 

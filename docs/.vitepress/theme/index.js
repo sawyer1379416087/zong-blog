@@ -1,4 +1,13 @@
 import DefaultTheme from 'vitepress/theme'
+import ArticleMeta from './ArticleMeta.vue'
 import './custom.css'
+import { h } from 'vue'
 
-export default DefaultTheme
+export default {
+  extends: DefaultTheme,
+  Layout() {
+    return h(DefaultTheme.Layout, null, {
+      'doc-before': () => h(ArticleMeta),
+    })
+  },
+}

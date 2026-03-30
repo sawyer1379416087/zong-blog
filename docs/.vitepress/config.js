@@ -7,8 +7,11 @@ export default {
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/zong-blog/logo.svg' }],
-    ['meta', { name: 'theme-color', content: '#5b8af5' }],
+    ['meta', { name: 'theme-color', content: '#646cff' }],
     ['meta', { name: 'og:type', content: 'website' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
+    ['link', { href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap', rel: 'stylesheet' }],
   ],
 
   markdown: {
@@ -17,16 +20,16 @@ export default {
 
   themeConfig: {
     siteTitle: '粽的博客',
-    logo: '/logo.svg',
 
     nav: [
       { text: '首页', link: '/' },
       {
         text: '分类',
         items: [
-          { text: '建站', link: '/categories/building' },
-          { text: 'AI', link: '/categories/ai' },
-          { text: '后端', link: '/categories/backend' },
+          { text: '🛠️ 建站', link: '/categories/building' },
+          { text: '🧠 AI', link: '/categories/ai' },
+          { text: '💻 后端', link: '/categories/backend' },
+          { text: '📚 学习', link: '/categories/learning' },
         ]
       },
       { text: 'GitHub', link: 'https://github.com/sawyer1379416087' },
@@ -35,19 +38,24 @@ export default {
     sidebar: {
       '/posts/': [
         {
-          text: '建站',
+          text: '🛠️ 建站',
           collapsed: false,
           items: [
             { text: 'VitePress 搭建个人博客', link: '/posts/vitepress-guide/' },
           ]
         },
         {
-          text: 'AI',
+          text: '🧠 AI',
           collapsed: true,
           items: []
         },
         {
-          text: '后端',
+          text: '💻 后端',
+          collapsed: true,
+          items: []
+        },
+        {
+          text: '📚 学习',
           collapsed: true,
           items: []
         },
@@ -56,9 +64,10 @@ export default {
         {
           text: '文章分类',
           items: [
-            { text: '建站', link: '/categories/building' },
-            { text: 'AI', link: '/categories/ai' },
-            { text: '后端', link: '/categories/backend' },
+            { text: '🛠️ 建站', link: '/categories/building' },
+            { text: '🧠 AI', link: '/categories/ai' },
+            { text: '💻 后端', link: '/categories/backend' },
+            { text: '📚 学习', link: '/categories/learning' },
           ]
         }
       ]
@@ -69,17 +78,17 @@ export default {
     ],
 
     footer: {
-      message: '用 VitePress 搭建 | 持续更新中',
-      copyright: '© 2026 粽 | 技术博客',
+      message: '用 VitePress 构建 · 在 GitHub Pages 部署',
+      copyright: '© 2026 粽 · All rights reserved',
     },
 
     outline: {
       level: [2, 3],
-      label: '目录',
+      label: '本页目录',
     },
 
     lastUpdated: {
-      text: '最后更新于',
+      text: '最后更新',
     },
 
     docFooter: {

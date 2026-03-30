@@ -126,38 +126,16 @@
 
 /* ==================== Doc Headings ==================== */
 
-.vp-doc > div > h1:first-child,
-.vp-doc > h1:first-child {
-  display: none !important;
-}
-
-.vp-doc h1 {
-  background: linear-gradient(135deg, #646cff 0%, #c084fc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 800;
-  font-size: 2rem;
-  letter-spacing: -0.02em;
-  margin-bottom: 8px;
-  padding-bottom: 16px;
-  border-bottom: 2px solid var(--vp-c-brand-soft);
-}
-
 .vp-doc h2 {
   font-weight: 700;
-  font-size: 1.4rem;
   margin-top: 48px;
   padding-bottom: 10px;
-  border-bottom: 2px solid var(--vp-c-brand-soft);
-  position: relative;
+  border-bottom: 1px solid var(--vp-c-divider);
 }
 
 .vp-doc h3 {
   font-weight: 650;
-  font-size: 1.15rem;
   margin-top: 32px;
-  color: var(--vp-c-brand-1);
 }
 
 /* ==================== Doc Paragraph ==================== */
@@ -330,18 +308,37 @@
 
 /* ==================== Outline (Table of Contents) ==================== */
 
+.VPDocAsideOutline {
+  border-left: 2px solid var(--vp-c-divider);
+  padding-left: 0;
+}
+
+.VPDocAsideOutline .outline-title {
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--vp-c-text-2);
+  padding-left: 14px;
+}
+
 .VPDocAsideOutline .outline-link {
-  transition: color 0.2s ease, transform 0.2s ease;
+  font-size: 0.84rem;
+  line-height: 1.6;
+  transition: all 0.2s ease;
+  padding-left: 14px;
+  border-left: 2px solid transparent;
+  margin-left: -2px;
 }
 
 .VPDocAsideOutline .outline-link:hover {
   color: var(--vp-c-brand-1);
-  transform: translateX(3px);
 }
 
 .VPDocAsideOutline .outline-link.active {
   color: var(--vp-c-brand-1);
   font-weight: 600;
+  border-left-color: var(--vp-c-brand-1);
 }
 
 /* ==================== Footer ==================== */

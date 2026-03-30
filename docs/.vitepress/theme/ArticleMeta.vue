@@ -6,9 +6,16 @@ const { frontmatter, page } = useData()
 
 const title = computed(() => frontmatter.value.title || '')
 const tags = computed(() => frontmatter.value.tags || [])
-const date = computed(() => frontmatter.value.date || '')
+const rawDate = computed(() => frontmatter.value.date || '')
 const category = computed(() => frontmatter.value.category || '')
-const show = computed(() => title.value && (date.value || category.value || tags.value.length))
+const show = computed(() => title.value && (rawDate.value || category.value || tags.value.length))
+
+const date = computed(() => {
+  if (!rawDate.value) return ''
+  const d = new Date(rawDate.value)
+  if (isNaN(d.getTime())) return String(rawDate.value)
+  return d.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })
+})
 </script>
 
 <template>

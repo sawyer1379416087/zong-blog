@@ -126,8 +126,9 @@
 
 /* ==================== Doc Headings ==================== */
 
-.vp-doc h1:first-child {
-  display: none;
+.vp-doc > div > h1:first-child,
+.vp-doc > h1:first-child {
+  display: none !important;
 }
 
 .vp-doc h1 {

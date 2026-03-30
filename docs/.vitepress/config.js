@@ -1,4 +1,6 @@
 export default {
+  base: '/zong-blog/',
+
   // 网站标题（浏览器标签显示）
   title: '粽 | 技术博客',
   // 网站描述（搜索引擎收录用）
@@ -6,7 +8,7 @@ export default {
 
   // 头部图标（可选，可跳过，后续可添加）
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }]
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/zong-blog/logo.svg' }]
   ],
 
   // 主题配置（核心：导航栏、侧边栏等）

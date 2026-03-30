@@ -1,0 +1,25 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main] # 当 main 分支有推送时，自动执行部署
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20 # 和你安装的 Node.js 版本一致（LTS 版本）
+
+      - run: npm install # 安装依赖
+      - run: npm run build # 打包博客
+
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/.vitepress/dist # 打包后的文件目录

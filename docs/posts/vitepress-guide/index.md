@@ -135,6 +135,75 @@ date: 2026-03-30
 
 VitePress 原生支持 Markdown 的所有语法，代码块、表格、链接都正常用。
 
+## 给文章打标签和分类
+
+我给博客做了一套标签+分类系统，原理很简单：利用 Markdown 的 frontmatter 字段 + 自定义 Vue 组件自动渲染。
+
+### 文章 frontmatter 写法
+
+每篇文章开头这样写就行：
+
+```markdown
+---
+title: 你的文章标题
+date: 2026-03-30
+category: 后端
+tags:
+  - Go
+  - 微服务
+  - Redis
+---
+```
+
+- `category` 是分类，写一个就好（比如：建站、AI、后端、学习）
+- `tags` 是标签列表，随便写几个都行，会以小药丸样式显示在文章顶部
+- `date` 是发布日期
+
+写完之后你不需要做别的，自定义主题里的 `ArticleMeta.vue` 组件会自动读取这些字段并渲染到页面上。
+
+### 新增分类
+
+如果已有的分类不够用，想新增一个，分三步：
+
+**第一步**：在 `docs/categories/` 下新建一个 Markdown 文件，比如 `devops.md`：
+
+```markdown
+# DevOps
+
+CI/CD、容器化、云原生相关的文章。
+
+## 文章列表
+
+- [你的文章标题](/posts/your-article/)
+```
+
+**第二步**：在 `docs/.vitepress/config.js` 里把新分类加到导航和侧边栏：
+
+```js
+// nav 里加
+{ text: '🔧 DevOps', link: '/categories/devops' }
+
+// sidebar '/posts/' 里加
+{
+  text: '🔧 DevOps',
+  collapsed: true,
+  items: [
+    { text: '文章标题', link: '/posts/your-article/' }
+  ]
+}
+
+// sidebar '/categories/' 里加
+{ text: '🔧 DevOps', link: '/categories/devops' }
+```
+
+**第三步**：如果首页也要展示，在 `docs/index.md` 的 features 里加一项。
+
+就这三步，新分类就有了。
+
+### 新增标签
+
+标签不需要额外创建文件——在文章的 frontmatter 里写什么 tag 就自动展示什么 tag。想加新标签直接往 `tags` 列表里写就行，没有限制。
+
 ## 部署到 GitHub Pages
 
 这是最后一步，让你的博客能被别人访问到。

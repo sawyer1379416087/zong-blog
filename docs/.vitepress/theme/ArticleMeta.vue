@@ -7,11 +7,12 @@ const { frontmatter } = useData()
 const tags = computed(() => frontmatter.value.tags || [])
 const date = computed(() => frontmatter.value.date || '')
 const category = computed(() => frontmatter.value.category || '')
+const show = computed(() => date.value || category.value || tags.value.length)
 </script>
 
 <template>
-  <div v-if="date || category || tags.length" class="article-meta-wrapper">
-    <div class="article-meta" v-if="date || category">
+  <div v-if="show" class="article-meta-wrapper">
+    <div class="article-meta">
       <span class="date" v-if="date">{{ date }}</span>
       <span class="category" v-if="category">{{ category }}</span>
     </div>
@@ -20,9 +21,3 @@ const category = computed(() => frontmatter.value.category || '')
     </div>
   </div>
 </template>
-
-<style scoped>
-.article-meta-wrapper {
-  margin: -4px 0 28px;
-}
-</style>

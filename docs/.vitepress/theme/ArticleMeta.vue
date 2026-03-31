@@ -1,6 +1,7 @@
 <script setup>
 import { useData } from 'vitepress'
 import { computed } from 'vue'
+import { withBase } from 'vitepress'
 
 const { frontmatter } = useData()
 
@@ -15,6 +16,10 @@ const date = computed(() => {
   if (isNaN(d.getTime())) return String(rawDate.value)
   return d.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })
 })
+
+function tagUrl(tag) {
+  return withBase(`/tags?tag=${encodeURIComponent(tag)}`)
+}
 </script>
 
 <template>
@@ -24,7 +29,12 @@ const date = computed(() => {
       <span class="info-date" v-if="date">{{ date }}</span>
     </div>
     <div class="info-tags" v-if="tags.length">
-      <span class="info-tag" v-for="tag in tags" :key="tag">{{ tag }}</span>
+      <a
+        v-for="tag in tags"
+        :key="tag"
+        :href="tagUrl(tag)"
+        class="info-tag"
+      >{{ tag }}</a>
     </div>
     <div class="info-rule"></div>
   </div>
@@ -87,6 +97,8 @@ const date = computed(() => {
   border: 1px solid var(--vp-c-divider);
   transition: all 0.3s ease;
   letter-spacing: 0.02em;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .info-tag:hover {

@@ -35,6 +35,7 @@ export default {
           { text: '学习', link: '/categories/learning' },
         ]
       },
+      { text: '标签', link: '/tags' },
       { text: 'GitHub', link: 'https://github.com/sawyer1379416087' },
     ],
 

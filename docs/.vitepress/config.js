@@ -7,11 +7,14 @@ export default {
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/zong-blog/logo.svg' }],
-    ['meta', { name: 'theme-color', content: '#646cff' }],
+    ['meta', { name: 'theme-color', content: '#3C2415' }],
     ['meta', { name: 'og:type', content: 'website' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
-    ['link', { href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap', rel: 'stylesheet' }],
+    ['link', {
+      href: 'https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Noto+Serif+SC:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap',
+      rel: 'stylesheet'
+    }],
   ],
 
   markdown: {
@@ -26,10 +29,10 @@ export default {
       {
         text: '分类',
         items: [
-          { text: '🛠️ 建站', link: '/categories/building' },
-          { text: '🧠 AI', link: '/categories/ai' },
-          { text: '💻 后端', link: '/categories/backend' },
-          { text: '📚 学习', link: '/categories/learning' },
+          { text: '建站', link: '/categories/building' },
+          { text: 'AI', link: '/categories/ai' },
+          { text: '后端', link: '/categories/backend' },
+          { text: '学习', link: '/categories/learning' },
         ]
       },
       { text: 'GitHub', link: 'https://github.com/sawyer1379416087' },
@@ -38,24 +41,24 @@ export default {
     sidebar: {
       '/posts/': [
         {
-          text: '🛠️ 建站',
+          text: '建站',
           collapsed: false,
           items: [
             { text: 'VitePress 搭建个人博客', link: '/posts/vitepress-guide/' },
           ]
         },
         {
-          text: '🧠 AI',
+          text: 'AI',
           collapsed: true,
           items: []
         },
         {
-          text: '💻 后端',
+          text: '后端',
           collapsed: true,
           items: []
         },
         {
-          text: '📚 学习',
+          text: '学习',
           collapsed: true,
           items: []
         },
@@ -64,10 +67,10 @@ export default {
         {
           text: '文章分类',
           items: [
-            { text: '🛠️ 建站', link: '/categories/building' },
-            { text: '🧠 AI', link: '/categories/ai' },
-            { text: '💻 后端', link: '/categories/backend' },
-            { text: '📚 学习', link: '/categories/learning' },
+            { text: '建站', link: '/categories/building' },
+            { text: 'AI', link: '/categories/ai' },
+            { text: '后端', link: '/categories/backend' },
+            { text: '学习', link: '/categories/learning' },
           ]
         }
       ]
@@ -78,7 +81,7 @@ export default {
     ],
 
     footer: {
-      message: '用 VitePress 构建 · 在 GitHub Pages 部署',
+      message: '以墨为引 · 以码为笔',
       copyright: '© 2026 粽 · All rights reserved',
     },
 
